@@ -25,11 +25,11 @@ let gcsAdapter = new GCSAdapter(
 
 ///////////////////////////////////
 
-let oneSignalPushAdapter = new OneSignalPushAdapter({
+/*let oneSignalPushAdapter = new OneSignalPushAdapter({
     oneSignalAppId: process.env.ONESIGNAL_APP_ID || '',
     oneSignalApiKey: process.env.ONESIGNAL_API_KEY || ''
 });
-
+*/
 let parseServer = new ParseServer({
     databaseURI: databaseUri || 'mongodb://heroku_p58pfjpg:ljpk1v2qsv78auvdfovnaralgj@ds217125.mlab.com:17125/heroku_p58pfjpg',
     cloud: __dirname + '/cloud/main.js',
@@ -41,9 +41,9 @@ let parseServer = new ParseServer({
     liveQuery: {
         classNames: [] // List of classes to support for query subscriptions
     },
-    push: {
+    /*push: {
         adapter: oneSignalPushAdapter
-    }
+    }*/
 
 });
 
@@ -52,7 +52,7 @@ let allowInsecureHTTP = true;
 let parseDashboardSettings = {
     apps: [
         {
-            serverURL: (process.env.DASHBOARD_SERVER_URL || 'http://localhost:1337') + '/parseServer',
+            serverURL: (process.env.SERVER_URL || 'http://localhost:1337') + '/parseServer',
             appId: process.env.APP_ID || 'parseServer',
             masterKey: process.env.MASTER_KEY || 'parseServer_554312345',
             appName: process.env.APP_NAME || "parseServer",
