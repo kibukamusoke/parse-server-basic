@@ -6,7 +6,6 @@ let ParseDashboard = require('parse-dashboard');
 let path = require('path');
 let OneSignalPushAdapter = require('parse-server-onesignal-push-adapter');
 
-
 let databaseUri = process.env.MONGODB_URI;
 
 if (!databaseUri) {
